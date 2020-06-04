@@ -14,13 +14,13 @@ Inicio
 opcao <- 1
 enquanto opcao <> 0 faca
 escreval("MENU")
-escreval("opção 1 - cadastrar")
-escreval("opção 2 - alterar produto cadastrado")
-escreval("opção 3 - excluir produto")
-escreval("opção 4 - consultar um produto")
-escreval("opção 5 - vender produto cadastratado")
-escreval("opção 6 - consultar estoque disponivel")
-escreval("opção 0 - Sair do programa")
+escreval("Opção 1 - cadastrar")
+escreval("Opção 2 - alterar produto cadastrado")
+escreval("Opção 3 - excluir produto")
+escreval("Opção 4 - consultar um produto")
+escreval("Opção 5 - vender produto cadastratado")
+escreval("Opção 6 - consultar estoque disponivel")
+escreval("Opção 0 - Sair do programa")
 escreval("")// quebra de linha
 escreval("Digite a opção desejada: ")
 leia(opcao)
@@ -35,9 +35,10 @@ escreval (i," Produto Cadastrado: ", produto[i])
 escreval ("Insira a quantidade do produto ")
 leia(estoque[i])
 escreval (i," Estoque OK: ", estoque[i])
-escreval ("qual o codigo do produto")
+escreval (i," Qual o codigo do produto ?")
 leia (cod[i])
 fimpara
+// fim do procedimento de cadastro de produto
 
 // procedimento de alterar os produtos
 caso 2
@@ -47,7 +48,7 @@ escreval (" Opção - 1: Alterar produto e descrição / Opção - 2: Alterar o 
 escreval("Opção - 0: Retornar ao menu")
 opcao <- 1
 leia (opcao)
-escolha (opcao)
+escolha (opcao)  // estrutura de escolha para as opções acima
 caso 1
 para i de 1 ate 3 faca
 escreval (i," Produtos: ", produto[i])
@@ -69,7 +70,7 @@ escreval ("Retornando ao menu")
 outrocaso
 escreval ("Menu")
 fimescolha
-
+// fim do procedimento de alterar os produtos
 
 //procedimento para excluir produto
 caso 3
@@ -81,34 +82,38 @@ leia (i)
 produto[i] <- ("Vazio")
 estoque[i] <- 0
 cod[i] <- 0
+//fim do procedimento para excluir produto
 
 // procedimento para listar/consultar produtos
 caso 4
 para i de 1 ate 3 faca
-escreval(produto[i], estoque[i])
+escreval(i," Produto :", produto[i]," Codigo :", cod[i])
 fimpara
+//fim do procedimento para listar/consultar produtos
 
 //procedimento de venda do produto
 caso 5
 para i de 1 ate 3 faca
-escreval(produto[i], estoque[i])
+escreval(i," Produto :", produto[i]," Estoque :", estoque[i], " Codigo :", cod[i])
 fimpara
-escreval("Cadastrar venda?")
-para i de 1 ate 3 faca
-escreval(produto[i], estoque[i])
-leia (produto[i], estoque[i])
-fimpara
+escreval(" Cadastrar venda ")
+leia (i)
+leia (estoque[i])
 escreval("Venda realizada")
-
+//fim do procedimento de venda do produto
 
 //procedimento de consultar estoque disponivel
 caso 6
 para i de 1 ate 3 faca
-escreval(produto[i], estoque[i])
+escreval(i," Produto :", produto[i]," Estoque :", estoque[i], " Codigo :", cod[i])
 fimpara
+//fim do procedimento de consultar estoque disponivel
 
 caso 0
 escreval ("Finalizando o sistema")
+se (estoque[i]) < 30% entao
+escreval("Seu estoque está acabando do produto", produto[i])
+fimse
 outrocaso
 escreval("Opção inexistente")
 

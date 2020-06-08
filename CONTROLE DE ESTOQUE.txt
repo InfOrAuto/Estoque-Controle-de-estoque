@@ -4,9 +4,9 @@ Var
 produto:vetor [1..3] de caractere
 estoque:vetor [1..3] de inteiro
 cod:vetor [1..3] de inteiro
+posvenda:vetor [1..3] de inteiro
 opcao:inteiro
 i:inteiro
-oi:logico
 Inicio
 opcao <- 1
 enquanto opcao <> 0 faca
@@ -26,7 +26,8 @@ escolha (opcao)
 // procedimento de cadastro de produto
 caso 1
 escreval("O que deseja")
-escreval (" Opção - 1: Cadastrar produto e descrição / Opção - 2: Cadastrar o estoque do produto ")
+escreval ("Opção - 1: Cadastrar produto e descrição /")
+escreval ("Opção - 2: Cadastrar o estoque do produto /")
 escreval("Opção - 3: Retornar ao menu")
 opcao <- 1
 leia (opcao)
@@ -53,7 +54,8 @@ fimescolha
 caso 2
 
 escreval("O que deseja")
-escreval (" Opção - 1: Alterar produto e descrição / Opção - 2: Alterar o estoque do produto ")
+escreval (" Opção - 1: Alterar produto e descrição /")
+escreval ("Opção - 2: Alterar o estoque do produto /")
 escreval("Opção - 3: Retornar ao menu")
 opcao <- 1
 leia (opcao)
@@ -91,7 +93,7 @@ escolha (opcao)  // estrutura de escolha para as opções acima
 caso 1
 escreval ("Escolha o produto a ser excluido")
 para i de 1 ate 3 faca
-escreval(i," Produto :", produto[i]," Estoque :", estoque[i], " Codigo :", cod[i])
+escreval(i," Produto :", produto[i]," Estoque :", estoque[i]," Codigo :", cod[i])
 fimpara
 leia (i)
 produto[i] <- ("Vazio")
@@ -131,11 +133,12 @@ leia (opcao)
 escolha (opcao)  // estrutura de escolha para as opções acima
 caso 1
 para i de 1 ate 3 faca
-escreval(i," Produto :", produto[i]," Estoque :", estoque[i], " Codigo :", cod[i])
+escreval(i," Produto :", produto[i]," Estoque :", estoque[i]," Codigo :", cod[i])
 fimpara
-escreval(" Cadastrar venda ")
+escreval(" Cadastrar venda, Digite a posição ")
 leia (i)
-leia (estoque[i])
+escreval (" Digite a quantidade vendida ")
+leia (posvenda[i])
 escreval("Venda realizada")
 caso 3
 escreval ("Retornando ao menu")
@@ -164,9 +167,11 @@ fimescolha
 caso 0
 escreval ("Finalizando o sistema")
 
-se (estoque[i]) < 30% entao
-escreval("Seu estoque está acabando do produto", produto[i])
+se (estoque[i]) < (30/100) entao
+escreval(" porcentagem ", estoque[i] )
 fimse
+
+
 outrocaso
 escreval("Opção inexistente")
 

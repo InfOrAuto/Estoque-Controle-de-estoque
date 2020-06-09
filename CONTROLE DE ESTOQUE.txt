@@ -169,7 +169,7 @@ enquanto opcao <> 0 faca
       para i de 1 ate 3 faca
          efinal <- (estoque[i] - posvenda[i])
          escreval( efinal )
-         se ( (estoque[i]*0.3) - estoque[i] ) < efinal entao
+         se ( estoque[i] - (estoque[i]*0.3) ) < efinal entao
             escreval ("Seu estoque está baixo considere comprar ", produto[i])
          fimse
       fimpara

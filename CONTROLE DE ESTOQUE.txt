@@ -5,177 +5,179 @@ produto:vetor [1..3] de caractere
 estoque:vetor [1..3] de inteiro
 cod:vetor [1..3] de inteiro
 posvenda:vetor [1..3] de inteiro
-opcao:inteiro
+opcao, efinal:inteiro
 i:inteiro
 Inicio
 opcao <- 1
 enquanto opcao <> 0 faca
-escreval("MENU")
-escreval("Opção 1 - Cadastrar")
-escreval("Opção 2 - Alterar produto cadastrado")
-escreval("Opção 3 - Excluir produto")
-escreval("Opção 4 - Consultar um produto")
-escreval("Opção 5 - Vender produto cadastratado")
-escreval("Opção 6 - Consultar estoque disponivel")
-escreval("Opção 0 - Sair do programa")
-escreval("")// quebra de linha
-escreval("Digite a opção desejada: ")
-leia(opcao)
-escolha (opcao)
+   escreval("MENU")
+   escreval("Opção 1 - Cadastrar")
+   escreval("Opção 2 - Alterar produto cadastrado")
+   escreval("Opção 3 - Excluir produto")
+   escreval("Opção 4 - Consultar um produto")
+   escreval("Opção 5 - Vender produto cadastratado")
+   escreval("Opção 6 - Consultar estoque disponivel")
+   escreval("Opção 0 - Sair do programa")
+   escreval("")// quebra de linha
+   escreval("Digite a opção desejada: ")
+   leia(opcao)
+   escolha (opcao)
 
-// procedimento de cadastro de produto
-caso 1
-escreval("O que deseja")
-escreval ("Opção - 1: Cadastrar produto e descrição /")
-escreval ("Opção - 2: Cadastrar o estoque do produto /")
-escreval("Opção - 3: Retornar ao menu")
-opcao <- 1
-leia (opcao)
-escolha (opcao)  // estrutura de escolha para as opções acima
-caso 1
-escreval ("Insira o produto desejado: Nome e(,) descrição")
-para i de 1 ate 3 faca
-leia(produto[i])
-escreval (i," Produto Cadastrado: ", produto[i])
-caso 2
-escreval ("Insira a quantidade do produto ")
-leia(estoque[i])
-escreval (i," Estoque OK: ", estoque[i])
-escreval (i," Qual o codigo do produto ?")
-leia (cod[i])
-fimpara
-caso 3
-escreval ("Retornando ao menu")
-escreval("")// quebra de linha
-fimescolha
-// fim do procedimento de cadastro de produto
+      // procedimento de cadastro de produto
+   caso 1
+      escreval("O que deseja")
+      escreval ("Opção - 1: Cadastrar produto e descrição /")
+      escreval("Opção - 3: Retornar ao menu")
+      opcao <- 1
+      leia (opcao)
+      escolha (opcao)  // estrutura de escolha para as opções acima
+      caso 1
+         escreval ("Insira o produto desejado: Nome e(,) descrição")
+         para i de 1 ate 3 faca
+            leia(produto[i])
+            escreval (i," Produto Cadastrado: ", produto[i])
+            escreval ("Insira a quantidade do produto ")
+            leia(estoque[i])
+            escreval (i," Estoque OK: ", estoque[i])
+            escreval (i," Qual o codigo do produto ?")
+            leia (cod[i])
+            escreval (i," Código: ", cod[i])
+         fimpara
+      caso 3
+         escreval ("Retornando ao menu")
+         escreval("")// quebra de linha
+      fimescolha
+      // fim do procedimento de cadastro de produto
 
-// procedimento de alterar os produtos
-caso 2
+      // procedimento de alterar os produtos
+   caso 2
 
-escreval("O que deseja")
-escreval (" Opção - 1: Alterar produto e descrição /")
-escreval ("Opção - 2: Alterar o estoque do produto /")
-escreval("Opção - 3: Retornar ao menu")
-opcao <- 1
-leia (opcao)
-escolha (opcao)  // estrutura de escolha para as opções acima
-caso 1
-para i de 1 ate 3 faca
-escreval (i," Produtos: ", produto[i])
-fimpara
-escreval ("Escolha um produto :")
-leia (i)
-leia (produto[i])
-escreval (i, " Produto Atualizado: ", produto[i])
-caso 2
-para i de 1 ate 3 faca
-escreval (i," Produtos: ", produto[i]," Estoque: ", estoque[i])
-fimpara
-escreval ("Escolha o estoque a se alterar")
-leia(i)
-leia(estoque[i])
-escreval (i," Estoque Atualizado: ", estoque [i])
-caso 3
-escreval ("Retornando ao menu")
-escreval("")// quebra de linha
-fimescolha
-// fim do procedimento de alterar os produtos
+      escreval("O que deseja")
+      escreval (" Opção - 1: Alterar produto e descrição /")
+      escreval ("Opção - 2: Alterar o estoque do produto /")
+      escreval("Opção - 3: Retornar ao menu")
+      opcao <- 1
+      leia (opcao)
+      escolha (opcao)  // estrutura de escolha para as opções acima
+      caso 1
+         para i de 1 ate 3 faca
+            escreval (i," Produtos: ", produto[i])
+         fimpara
+         escreval ("Escolha um produto :")
+         leia (i)
+         leia (produto[i])
+         escreval (i, " Produto Atualizado: ", produto[i])
+      caso 2
+         para i de 1 ate 3 faca
+            escreval (i," Produtos: ", produto[i]," Estoque: ", estoque[i])
+         fimpara
+         escreval ("Escolha o estoque a se alterar")
+         leia(i)
+         leia(estoque[i])
+         escreval (i," Estoque Atualizado: ", estoque [i])
+      caso 3
+         escreval ("Retornando ao menu")
+         escreval("")// quebra de linha
+      fimescolha
+      // fim do procedimento de alterar os produtos
 
-//procedimento para excluir produto
-caso 3
-escreval("O que deseja")
-escreval (" Opção - 1: Excluir um produto ")
-escreval("Opção - 3: Retornar ao menu")
-opcao <- 1
-leia (opcao)
-escolha (opcao)  // estrutura de escolha para as opções acima
-caso 1
-escreval ("Escolha o produto a ser excluido")
-para i de 1 ate 3 faca
-escreval(i," Produto :", produto[i]," Estoque :", estoque[i]," Codigo :", cod[i])
-fimpara
-leia (i)
-produto[i] <- ("Vazio")
-estoque[i] <- 0
-cod[i] <- 0
-caso 3
-escreval ("Retornando ao menu")
-escreval("")// quebra de linha
-fimescolha
-//fim do procedimento para excluir produto
+      //procedimento para excluir produto
+   caso 3
+      escreval("O que deseja")
+      escreval (" Opção - 1: Excluir um produto ")
+      escreval("Opção - 3: Retornar ao menu")
+      opcao <- 1
+      leia (opcao)
+      escolha (opcao)  // estrutura de escolha para as opções acima
+      caso 1
+         escreval ("Escolha o produto a ser excluido")
+         para i de 1 ate 3 faca
+            escreval(i," Produto :", produto[i]," Estoque :", estoque[i]," Codigo :", cod[i])
+         fimpara
+         leia (i)
+         produto[i] <- ("Vazio")
+         estoque[i] <- 0
+         cod[i] <- 0
+      caso 3
+         escreval ("Retornando ao menu")
+         escreval("")// quebra de linha
+      fimescolha
+      //fim do procedimento para excluir produto
 
-// procedimento para listar/consultar produtos
-caso 4
-escreval("O que deseja")
-escreval (" Opção - 1: Listar todos produtos cadastrados ")
-escreval("Opção - 3: Retornar ao menu")
-opcao <- 1
-leia (opcao)
-escolha (opcao)  // estrutura de escolha para as opções acima
-caso 1
-para i de 1 ate 3 faca
-escreval(i," Produto :", produto[i]," Codigo :", cod[i])
-fimpara
-caso 3
-escreval ("Retornando ao menu")
-escreval("")// quebra de linha
-fimescolha
-//fim do procedimento para listar/consultar produtos
+      // procedimento para listar/consultar produtos
+   caso 4
+      escreval("O que deseja")
+      escreval (" Opção - 1: Listar todos produtos cadastrados ")
+      escreval("Opção - 3: Retornar ao menu")
+      opcao <- 1
+      leia (opcao)
+      escolha (opcao)  // estrutura de escolha para as opções acima
+      caso 1
+         para i de 1 ate 3 faca
+            escreval(i," Produto :", produto[i]," Codigo :", cod[i])
+         fimpara
+      caso 3
+         escreval ("Retornando ao menu")
+         escreval("")// quebra de linha
+      fimescolha
+      //fim do procedimento para listar/consultar produtos
 
-//procedimento de venda do produto
-caso 5
-escreval("O que deseja")
-escreval (" Opção - 1: Vender um produto ")
-escreval("Opção - 3: Retornar ao menu")
-opcao <- 1
-leia (opcao)
-escolha (opcao)  // estrutura de escolha para as opções acima
-caso 1
-para i de 1 ate 3 faca
-escreval(i," Produto :", produto[i]," Estoque :", estoque[i]," Codigo :", cod[i])
-fimpara
-escreval(" Cadastrar venda, Digite a posição ")
-leia (i)
-escreval (" Digite a quantidade vendida ")
-leia (posvenda[i])
-escreval("Venda realizada")
-caso 3
-escreval ("Retornando ao menu")
-escreval("")// quebra de linha
-fimescolha
-//fim do procedimento de venda do produto
+      //procedimento de venda do produto
+   caso 5
+      escreval("O que deseja")
+      escreval (" Opção - 1: Vender um produto ")
+      escreval("Opção - 3: Retornar ao menu")
+      opcao <- 1
+      leia (opcao)
+      escolha (opcao)  // estrutura de escolha para as opções acima
+      caso 1
+         para i de 1 ate 3 faca
+            escreval(i," Produto :", produto[i]," Estoque :", posvenda[i]," Codigo :", cod[i])
+         fimpara
+         escreval(" Cadastrar venda, Digite a posição ")
+         leia (i)
+         escreval (" Digite a quantidade vendida ")
+         leia (posvenda[i])
+         escreval("Venda realizada")
+      caso 3
+         escreval ("Retornando ao menu")
+         escreval("")// quebra de linha
+      fimescolha
+      //fim do procedimento de venda do produto
 
-//procedimento de consultar estoque disponivel
-caso 6
-escreval("O que deseja")
-escreval (" Opção - 1: Mostrar estoque de produtos ")
-escreval("Opção - 3: Retornar ao menu")
-opcao <- 1
-leia (opcao)
-escolha (opcao)  // estrutura de escolha para as opções acima
-caso 1
-para i de 1 ate 3 faca
-escreval(i," Estoque : ", estoque[i])
-fimpara
-caso 3
-escreval ("Retornando ao menu")
-escreval("")// quebra de linha
-fimescolha
-//fim do procedimento de consultar estoque disponivel
+      //procedimento de consultar estoque disponivel
+   caso 6
+      escreval("O que deseja")
+      escreval (" Opção - 1: Mostrar estoque de produtos ")
+      escreval("Opção - 3: Retornar ao menu")
+      opcao <- 1
+      leia (opcao)
+      escolha (opcao)  // estrutura de escolha para as opções acima
+      caso 1
+         para i de 1 ate 3 faca
+            escreval(i," Estoque : ", estoque[i])
+         fimpara
+      caso 3
+         escreval ("Retornando ao menu")
+         escreval("")// quebra de linha
+      fimescolha
+      //fim do procedimento de consultar estoque disponivel
 
-caso 0
-escreval ("Finalizando o sistema")
+   caso 0
+      escreval ("Finalizando o sistema")
 
-se (estoque[i]) < (30/100) entao
-escreval(" porcentagem ", estoque[i] )
-fimse
+      para i de 1 ate 3 faca
+         efinal <- (estoque[i] - posvenda[i])
+         escreval( efinal )
+         se ( (estoque[i]*0.3) - estoque[i] ) < efinal entao
+            escreval ("Seu estoque está baixo considere comprar ", produto[i])
+         fimse
+      fimpara
+      
+   outrocaso
+      escreval("Opção inexistente")
 
-
-outrocaso
-escreval("Opção inexistente")
-
-fimescolha
+   fimescolha
 fimenquanto
 
 fimalgoritmo

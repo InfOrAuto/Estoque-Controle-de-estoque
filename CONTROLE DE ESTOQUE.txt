@@ -7,9 +7,11 @@ cod:vetor [1..3] de inteiro
 posvenda:vetor [1..3] de inteiro
 opcao, efinal:inteiro
 i:inteiro
+aux   :caractere
 Inicio
 opcao <- 1
 enquanto opcao <> 0 faca
+   limpatela
    escreval("MENU")
    escreval("Opção 1 - Cadastrar")
    escreval("Opção 2 - Alterar produto cadastrado")
@@ -25,6 +27,7 @@ enquanto opcao <> 0 faca
 
       // procedimento de cadastro de produto
    caso 1
+      limpatela
       escreval("O que deseja")
       escreval ("Opção - 1: Cadastrar produto e descrição /")
       escreval("Opção - 3: Retornar ao menu")
@@ -32,8 +35,9 @@ enquanto opcao <> 0 faca
       leia (opcao)
       escolha (opcao)  // estrutura de escolha para as opções acima
       caso 1
-         escreval ("Insira o produto desejado: Nome e(,) descrição")
+      limpatela
          para i de 1 ate 3 faca
+         escreval ("Insira o produto desejado: Nome e (,) Descrição")
             leia(produto[i])
             escreval (i," Produto Cadastrado: ", produto[i])
             escreval ("Insira a quantidade do produto ")
@@ -42,8 +46,10 @@ enquanto opcao <> 0 faca
             escreval (i," Qual o codigo do produto ?")
             leia (cod[i])
             escreval (i," Código: ", cod[i])
+            limpatela
          fimpara
       caso 3
+      limpatela
          escreval ("Retornando ao menu")
          escreval("")// quebra de linha
       fimescolha
@@ -51,7 +57,7 @@ enquanto opcao <> 0 faca
 
       // procedimento de alterar os produtos
    caso 2
-
+      limpatela
       escreval("O que deseja")
       escreval (" Opção - 1: Alterar produto e descrição /")
       escreval ("Opção - 2: Alterar o estoque do produto /")
@@ -59,7 +65,9 @@ enquanto opcao <> 0 faca
       opcao <- 1
       leia (opcao)
       escolha (opcao)  // estrutura de escolha para as opções acima
+      
       caso 1
+      limpatela
          para i de 1 ate 3 faca
             escreval (i," Produtos: ", produto[i])
          fimpara
@@ -68,6 +76,7 @@ enquanto opcao <> 0 faca
          leia (produto[i])
          escreval (i, " Produto Atualizado: ", produto[i])
       caso 2
+      limpatela
          para i de 1 ate 3 faca
             escreval (i," Produtos: ", produto[i]," Estoque: ", estoque[i])
          fimpara
@@ -83,6 +92,7 @@ enquanto opcao <> 0 faca
 
       //procedimento para excluir produto
    caso 3
+      limpatela
       escreval("O que deseja")
       escreval (" Opção - 1: Excluir um produto ")
       escreval("Opção - 3: Retornar ao menu")
@@ -90,9 +100,11 @@ enquanto opcao <> 0 faca
       leia (opcao)
       escolha (opcao)  // estrutura de escolha para as opções acima
       caso 1
+      limpatela
          escreval ("Escolha o produto a ser excluido")
          para i de 1 ate 3 faca
-            escreval(i," Produto :", produto[i]," Estoque :", estoque[i]," Codigo :", cod[i])
+            escreval(i," Produto :", produto[i]," Estoque :", estoque[i])
+            escreval(" Codigo :", cod[i])
          fimpara
          leia (i)
          produto[i] <- ("Vazio")
@@ -106,6 +118,7 @@ enquanto opcao <> 0 faca
 
       // procedimento para listar/consultar produtos
    caso 4
+      limpatela
       escreval("O que deseja")
       escreval (" Opção - 1: Listar todos produtos cadastrados ")
       escreval("Opção - 3: Retornar ao menu")
@@ -116,6 +129,8 @@ enquanto opcao <> 0 faca
          para i de 1 ate 3 faca
             escreval(i," Produto :", produto[i]," Codigo :", cod[i])
          fimpara
+         escreva ("Pressione ENTER para continuar")
+         leia(aux)
       caso 3
          escreval ("Retornando ao menu")
          escreval("")// quebra de linha
@@ -124,6 +139,7 @@ enquanto opcao <> 0 faca
 
       //procedimento de venda do produto
    caso 5
+      limpatela
       escreval("O que deseja")
       escreval (" Opção - 1: Vender um produto ")
       escreval("Opção - 3: Retornar ao menu")
@@ -131,8 +147,10 @@ enquanto opcao <> 0 faca
       leia (opcao)
       escolha (opcao)  // estrutura de escolha para as opções acima
       caso 1
+      limpatela
          para i de 1 ate 3 faca
-            escreval(i," Produto :", produto[i]," Estoque :", posvenda[i]," Codigo :", cod[i])
+            escreval(i," Produto :", produto[i]," Estoque :", estoque[i])
+            escreval(" Codigo :", cod[i])
          fimpara
          escreval(" Cadastrar venda, Digite a posição ")
          leia (i)
@@ -147,6 +165,7 @@ enquanto opcao <> 0 faca
 
       //procedimento de consultar estoque disponivel
    caso 6
+      limpatela
       escreval("O que deseja")
       escreval (" Opção - 1: Mostrar estoque de produtos ")
       escreval("Opção - 3: Retornar ao menu")
@@ -154,9 +173,12 @@ enquanto opcao <> 0 faca
       leia (opcao)
       escolha (opcao)  // estrutura de escolha para as opções acima
       caso 1
+      limpatela
          para i de 1 ate 3 faca
             escreval(i," Estoque : ", estoque[i])
          fimpara
+         escreva ("Pressione ENTER para continuar")
+         leia(aux)
       caso 3
          escreval ("Retornando ao menu")
          escreval("")// quebra de linha
@@ -164,16 +186,17 @@ enquanto opcao <> 0 faca
       //fim do procedimento de consultar estoque disponivel
 
    caso 0
+      limpatela
       escreval ("Finalizando o sistema")
 
       para i de 1 ate 3 faca
          efinal <- (estoque[i] - posvenda[i])
-         escreval( efinal )
-         se ( estoque[i] - (estoque[i]*0.3) ) < efinal entao
+         se ( estoque[i] - (estoque[i]*0.3) ) > efinal entao
             escreval ("Seu estoque está baixo considere comprar ", produto[i])
+            escreval( efinal )
          fimse
       fimpara
-      
+
    outrocaso
       escreval("Opção inexistente")
 
